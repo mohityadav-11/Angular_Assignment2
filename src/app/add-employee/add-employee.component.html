@@ -1,0 +1,142 @@
+<div class="card-body card">
+  <form #employeeForm="ngForm" >
+    <fieldset>
+      <legend>Edit Employee:</legend>
+
+      <div class="form-group row">
+        <label class="col-md-2 col-form-label"
+               for="empName">Name:</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="empName"
+                 type="text"
+                 [(ngModel)]=employee.eName
+                 placeholder="Name"
+                 required
+                 pattern="^[a-zA-Z]{2,25}"
+                 minlength="3"
+                 name="empName"
+                 />
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-md-2 col-form-label"
+               for="empAge">Age:</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="empAge"
+                 [(ngModel)]=employee.eAge
+                 placeholder="Age"
+                 type="number"
+                 min="22"
+                 max="70"
+                 required
+                 name="empAge"
+                 />
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-md-2 col-form-label"
+               for="empAge">Gender:</label>
+        <div class="col-md-8">
+          <div class="btn-group">
+            <label class="btn btn-primary" checked='male'
+                   btnRadio="Male" tabindex="0" role="button">Male</label>
+            <label class="btn btn-primary" checked="female"
+                   btnRadio="Female" tabindex="0" role="button">Female</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-md-2 col-form-label"
+               for="empSalary">Salary:</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="empSalary"
+                 [(ngModel)]=employee.eSalary
+                 placeholder="Salary"
+                 type="text"
+                 required
+                 pattern=""
+                 name="empSalary"
+                 />
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-md-2 col-form-label"
+               for="empEmail">Email:</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="empEmail"
+                 [(ngModel)]=employee.eEmail
+                 placeholder="Email"
+                 type="email"
+                 required
+                 name="empEmail"
+                 />
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-md-2 col-form-label"
+               for="empContact">Contact no.:</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="empContact"
+                 [(ngModel)]=employee.eContact
+                 placeholder="Contact no."
+                 type="text"
+                 required
+                 name="empContact"
+                 />
+        </div>
+      </div>
+
+
+
+      <div class="form-group row">
+        <label class="col-md-2 col-form-label"
+               for="empAddress">Address:</label>
+        <div class="col-md-8">
+          <textarea class="form-control"
+                    [(ngModel)]=employee.eAddress
+                    id="empAddress"
+                    placeholder="Address"
+                    rows=3
+                    name="Address"></textarea>
+        </div>
+      </div>
+
+      <div class="row mb-2 text-center">
+        <div class="col-md-4">
+          <button class="btn btn-primary mr-3"
+                  style="width:80px"
+                  type="button"
+                  (click)='saveEmp()'
+                  >
+            Save
+          </button>
+          <button class="btn btn-outline-secondary mr-3"
+                  style="width:80px"
+                  type="button"
+                  [routerLink]="['/employees']">
+            Cancel
+          </button>
+          <button class="btn btn-outline-warning"
+                  style="width:80px"
+                  type="button"
+                  (click)='deleteEmp()'
+                  >
+            Delete
+          </button>
+        </div>
+      </div>
+
+    </fieldset>
+  </form>
+</div>
+

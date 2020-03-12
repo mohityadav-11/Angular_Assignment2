@@ -1,0 +1,39 @@
+
+<div class="card">
+  <div class="table-responsive">
+    <table class="table mb-0">
+      <thead>
+        <tr>
+          <th>Employee ID</th>
+          <th>Employee Name</th>
+          <th>Age</th>
+          <th>Gender</th>
+          <th>Salary</th>
+          <th>Email</th>
+          <th>Contact</th>
+          <th>Address</th>
+          <th></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let emp of employees">
+          <td>{{ emp.id }}</td>
+          <td>{{ emp.eName }}</td>
+          <td>{{ emp.eAge }}</td>
+          <td>{{ emp.eGender }}</td>
+          <td>{{ emp.eSalary | currency:"USD":"symbol":"1.2-2" }}</td>
+          <td>{{ emp.eEmail }}</td>
+          <td>{{ emp.eContact }}</td>
+          <td>{{ emp.eAddress }}</td>
+          <td>
+            <button class="btn btn-outline-primary btn-sm"
+            [routerLink]="['/addemployee', emp.id, 'add']">
+              Edit
+            </button>
+          </td>
+        </tr>
+      </tbody>
+  </table>
+</div>
+</div>
